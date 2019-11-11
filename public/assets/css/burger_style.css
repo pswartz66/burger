@@ -3,22 +3,18 @@
 
 
 #body-column {
-
     background-color: aquamarine;
     height: 300px;
     width: auto;
     padding: 10px;
     overflow: auto;
-
     border: solid 1px black;
 
 }
 
 
 #column-header {
-
     text-align: center;
-
     font-size: 18px;
     font-weight: 600;
 
