@@ -1,2 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Eat Da Burger!</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burger App</title>
+
+    {{!-- Custom CSS --}}
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/burger_style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="../../public/assets/js/burgers.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="jumbotron jumbo">
+            <div>
+                <h1>BurgerApp</h1>
+                <hr class="my-4">
+
+            </div>
+
+            <div>
+
+                <p>Enter your favorite burger type below!</p>
+                <textarea name="burger" id="burger-type" cols="40" rows="1">
+
+                </textarea>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burger Type</div>
+            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Hungry?</div>
+            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burgers Eaten</div>
+        </div>
+
+        <div class="row">
+            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">.col-sm-4</div>
+            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">.col-sm-4</div>
+            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">.col-sm-4</div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
