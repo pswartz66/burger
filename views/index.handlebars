@@ -34,33 +34,40 @@
             </div>
 
 
-            <div class="form">
+            <div class="form my-form">
 
-                <label for="search-label">Enter your favorite burger type below!</label>
+                <label id="label-text" for="search-label">Enter your favorite burger type below!</label>
 
                 <input type="text" class="form-control" id="add-burger">
 
 
+                <button type="submit" class="btn btn-success success-btn" id="add-btn">
+
+                    <i class=""></i>Add burger
+
+                </button>
+
+                {{!-- <button type="submit" class="btn btn-danger danger-btn" id="delete-btn">
+
+                    <i class=""></i>Delete burger
+
+                </button> --}}
+
             </div>
 
-            <button type="submit" class="btn btn-success success-btn" id="add-btn">
-
-                <i class=""></i>Add burger
-
-            </button>
 
 
         </div>
 
         <div class="row">
-            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burger Type</div>
+            {{!-- <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burger Type</div>
             <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Hungry?</div>
-            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burgers Eaten</div>
+            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burgers Eaten</div> --}}
         </div>
 
         <div class="row">
             <div class="burger-names" id="body-column" class="col-sm-4 col-md-4 col-lg-4">
-                
+
                 <ol>
                     {{#each burgers}}
                     {{> names}}
@@ -69,7 +76,7 @@
                 </ol>
 
             </div>
-            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">
+            {{!-- <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">
 
                 <ol>
                     {{#each burgers}}
@@ -77,12 +84,11 @@
                     {{/each}}
 
                 </ol>
-                
-            </div>
+
+            </div> --}}
 
             <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">move burger here if it's been eaten</div>
         </div>
-
 
     </div>
 

@@ -9,6 +9,7 @@ let orm = {
 
         let query = "SELECT * FROM burgers_db." + tableInput + ";";
 
+        console.log(query);
         connection.query(query, function (err, result) {
 
             if (err) { throw err };
@@ -23,6 +24,7 @@ let orm = {
 
         let query = "INSERT INTO " + table + " (" + cols.toString() + ") VALUES (?, false)";
 
+        console.log(query);
         connection.query(query, vals, function (err, result) {
 
             if (err) { throw err };
@@ -38,12 +40,27 @@ let orm = {
         let query = "UPDATE " + table + " SET " + "devoured = '" + colOne + "'"+
             " WHERE id = " + condition + ";";
 
+        console.log(query);
         connection.query(query, function (err, result) {
 
             if (err) { throw err };
 
             cb(result);
 
+        });
+
+    },
+
+    delete: function(table, condition, cb) {
+        let query = "DELETE FROM " + table + " WHERE id = " + condition;
+    
+        console.log(query);
+        connection.query(query, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
         });
 
     }

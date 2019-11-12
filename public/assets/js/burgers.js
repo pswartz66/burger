@@ -1,7 +1,7 @@
 
 
 
-$("#add-btn").on("click", function(){
+$("#add-btn").on("click", function () {
 
     event.preventDefault();
 
@@ -17,7 +17,7 @@ $("#add-btn").on("click", function(){
         data: userBurger
 
 
-    }).then(function(){
+    }).then(function () {
 
         console.log(userBurger);
 
@@ -25,12 +25,31 @@ $("#add-btn").on("click", function(){
 
         location.reload();
 
-        
-    })
 
-    
-    
-    
+    });
 
 
-})
+});
+
+
+$("#delete-btns").on("click", function () {
+
+    event.preventDefault();
+
+    let id = $(this).data("id");
+
+    $.ajax("/api/burgers/"+id, {
+        type: "DELETE",
+
+    }).then(function () {
+
+        console.log("Deleted a burger");
+
+        location.reload();
+
+    });
+
+
+
+});
+

@@ -29,10 +29,25 @@
 
 }
 
+.my-form {
+    width: 360px;
+    float: left;
+    margin-right: 10px;
+}
+
 #add-burger {
     width: 360px;
     float: left;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
+#add-btn {
+    float: left;
+    margin-right: 10px;
+}
+
+.jumbo {
+    overflow: auto;
+    padding: 12px!important;
+}
 

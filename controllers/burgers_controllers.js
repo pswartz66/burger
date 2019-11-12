@@ -58,10 +58,29 @@ router.put("/api/burgers/:id", function(req, res){
         } else {
 
             res.status(202).end();
-            
+
         }
 
-    })
+    });
+
+
+    router.delete("api/burgers/:id", function(req, res) {
+
+        let condition = req.params.id;
+
+        burger.delete(condition, function(result) {
+
+            if (result.affectedRows == 0) {
+
+                return res.status(404).end();
+            } else {
+
+                res.status(202).end();
+            }
+
+        });
+
+    });
 
 });
 
