@@ -32,11 +32,13 @@ $("#add-btn").on("click", function () {
 });
 
 
-$("#delete-btns").on("click", function () {
+$(".delete-btns").on("click", function () {
 
     event.preventDefault();
 
     let id = $(this).data("id");
+
+    console.log(id);
 
     $.ajax("/api/burgers/"+id, {
         type: "DELETE",
