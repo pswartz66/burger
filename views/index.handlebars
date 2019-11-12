@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery.js"></script>
 
-    <script src="../../public/assets/js/burgers.js"></script>
 
 
 </head>
@@ -28,51 +26,72 @@
 
         <div class="jumbotron jumbo">
             <div>
-                <h1>BurgerApp</h1>
+                <h1>BurgerApp <img class="burger-img" src="../public/assets/img/burger-icon.png">
+
+                </h1>
                 <hr class="my-4">
 
             </div>
 
-            <div>
 
-                <p>Enter your favorite burger type below!</p>
-                <textarea name="burger" id="burger-type" cols="40" rows="1">
+            <div class="form">
 
-                </textarea>
+                <label for="search-label">Enter your favorite burger type below!</label>
+
+                <input type="text" class="form-control" id="add-burger">
+
 
             </div>
+
+            <button type="submit" class="btn btn-success success-btn" id="add-btn">
+
+                <i class=""></i>Add burger
+
+            </button>
+
 
         </div>
 
         <div class="row">
             <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burger Type</div>
-            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Hungry?
-
-                
-
-            </div>
+            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Hungry?</div>
             <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burgers Eaten</div>
         </div>
 
         <div class="row">
-            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">burger names go here</div>
-            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">devour button goes here
+            <div class="burger-names" id="body-column" class="col-sm-4 col-md-4 col-lg-4">
+                
+                <ol>
+                    {{#each burgers}}
+                    {{> names}}
+                    {{/each}}
 
-                <button></button>
+                </ol>
+
+            </div>
+            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">
+
+                <ol>
+                    {{#each burgers}}
+                    {{> burger}}
+                    {{/each}}
+
+                </ol>
+                
             </div>
 
             <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">move burger here if it's been eaten</div>
         </div>
 
 
-
-
-
     </div>
 
 
+    {{!-- Jquery link --}}
+    <script src="https://code.jquery.com/jquery.js"></script>
 
-
+    {{!-- Link to the front end js file --}}
+    <script src="../public/assets/js/burgers.js"></script>
 
 
 </body>

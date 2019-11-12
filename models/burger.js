@@ -13,8 +13,27 @@ var burger = {
 
         });
 
-    }
+    },
 
+    create: function(cols, vals, cb) {
+
+        orm.create("burgers", cols, vals, function(res) {
+
+            cb(res);
+
+        })
+
+    },
+
+    update: function(colOne, condition, cb) {
+
+        orm.update("burgers", colOne, condition, function(res) {
+
+            cb(res);
+
+        });
+
+    }
 
 }
 
