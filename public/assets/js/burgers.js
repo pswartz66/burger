@@ -12,7 +12,7 @@ $("#add-btn").on("click", function () {
 
     }
 
-    $.ajax("api/burgers", {
+    $.ajax("/api/burgers", {
         type: "POST",
         data: userBurger
 
