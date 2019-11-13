@@ -7,11 +7,11 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 
 // Create all routes
-router.get("/", function(req, res){
+router.get("/", function (req, res) {
 
     // console.log('get controller route');
 
-    burger.all(function(data){
+    burger.all(function (data) {
 
         let bObject = {
             burgers: data
@@ -28,11 +28,11 @@ router.get("/", function(req, res){
 });
 
 
-router.post("/api/burgers", function(req, res) {
+router.post("/api/burgers", function (req, res) {
 
-    burger.create(['burger_name', 'devoured'], [req.body.name, req.body.devoured], function(result){
+    burger.create(['burger_name', 'devoured'], [req.body.name, req.body.devoured], function (result) {
 
-        res.json(( { id: result.insertId }))
+        res.json(({ id: result.insertId }))
 
     });
 
@@ -41,7 +41,7 @@ router.post("/api/burgers", function(req, res) {
 });
 
 
-router.put("/api/burgers/:id", function(req, res){
+router.put("/api/burgers/:id", function (req, res) {
 
     let condition = req.params.id;
 
@@ -49,7 +49,7 @@ router.put("/api/burgers/:id", function(req, res){
 
         devoured: true
 
-    }, condition, function(result) {
+    }, condition, function (result) {
 
         if (result.changedRows == 0) {
 
@@ -63,28 +63,28 @@ router.put("/api/burgers/:id", function(req, res){
 
     });
 
+});
 
-    router.delete("api/burgers/:id", function(req, res) {
+router.delete("/api/burgers/:id", function (req, res) {
 
-        let condition = req.params.id;
-        console.log(condition);
+    let condition = req.params.id;
+    console.log(condition);
 
-        burger.delete(condition, function(result) {
+    burger.delete(condition, function (result) {
 
-            if (result.affectedRows == 0) {
+        if (result.affectedRows == 0) {
 
-                return res.status(404).end();
-                
-            } else {
+            return res.status(404).end();
 
-                res.status(202).end();
-            }
+        } else {
 
-        });
+            res.status(202).end();
+        }
 
     });
 
 });
+
 
 
 // Export routes for the server.js file to use
