@@ -34,7 +34,6 @@ if (process.env.JAWSDB_URL) {
 
 
 
-
 }
 
 
@@ -48,7 +47,6 @@ connection.connect(function (err) {
         console.log("connected as id " + connection.threadId);
 
     });
-
 
 
 
