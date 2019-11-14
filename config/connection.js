@@ -13,18 +13,32 @@ const connection = mysql.createConnection({
 });
 
 
+// hook to JawsDB if on hosted on heroku
+if (process.env.JAWSDB_URL) {
 
-// Make connection
-connection.connect(function(err) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-    if (err) {
-        console.log("error connecting: " + err.stack);
-        return;
-    }
+} else {
 
-    console.log("connected as id " + connection.threadId);
+    // Make standard local database connection
+    connection.connect(function (err) {
 
-});
+        if (err) {
+            console.log("error connecting: " + err.stack);
+            return;
+        }
+
+        console.log("connected as id " + connection.threadId);
+
+    });
+
+
+}
+
+
+
+
+
 
 module.exports = connection;
 
