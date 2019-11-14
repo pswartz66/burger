@@ -1,16 +1,18 @@
 
-const mysql = require("mysql");
+var mysql = require("mysql");
 
 require('dotenv').config();
 let myKeys = require("../keys.js");
 
-const connection = mysql.createConnection({
+var connection;
+
+/* const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
     password: myKeys.ID.SECRET_ID,
     database: "burgers_db"
-});
+}); */
 
 
 // hook to JawsDB if on hosted on heroku
@@ -21,7 +23,22 @@ if (process.env.JAWSDB_URL) {
 } else {
 
     // Make standard local database connection
-    connection.connect(function (err) {
+
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: myKeys.ID.SECRET_ID,
+        database: "burgers_db"
+    });
+
+
+
+
+}
+
+
+connection.connect(function (err) {
 
         if (err) {
             console.log("error connecting: " + err.stack);
@@ -31,10 +48,6 @@ if (process.env.JAWSDB_URL) {
         console.log("connected as id " + connection.threadId);
 
     });
-
-
-}
-
 
 
 
