@@ -4,11 +4,12 @@
 
 #body-column {
     background-color: aquamarine;
-    height: auto;
-    width: auto;
-    padding: 10px;
+    height: 300px;
+    width: 50%;
+    padding: 2px;
     overflow: auto;
     border: solid 1px black;
+
 
 }
 
@@ -20,6 +21,7 @@
 
 
 }
+
 
 
 .burger-img {
@@ -50,4 +52,7 @@
     overflow: auto;
     padding: 12px!important;
 }
+
+
+
 

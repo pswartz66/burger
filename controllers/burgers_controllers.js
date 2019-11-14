@@ -44,12 +44,9 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
 
     let condition = req.params.id;
+    let devoured = 1;
 
-    burger.update({
-
-        devoured: true
-
-    }, condition, function (result) {
+    burger.update(devoured, condition, function (result) {
 
         if (result.changedRows == 0) {
 
@@ -61,7 +58,8 @@ router.put("/api/burgers/:id", function (req, res) {
 
         }
 
-    });
+    })
+
 
 });
 

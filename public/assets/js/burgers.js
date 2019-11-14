@@ -40,7 +40,7 @@ $(".delete-btns").on("click", function () {
 
     console.log(id);
 
-    $.ajax("/api/burgers/"+id, {
+    $.ajax("/api/burgers/" + id, {
         type: "DELETE",
 
     }).then(function () {
@@ -52,6 +52,25 @@ $(".delete-btns").on("click", function () {
     });
 
 
-
 });
 
+$(".devour-btns").on("click", function () {
+
+    let id = $(this).data("id");
+
+    console.log(id);
+
+    $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+
+    }).then(function () {
+
+        console.log("Devoured a burger");
+        
+        location.reload();
+
+
+    })
+
+
+});

@@ -60,37 +60,53 @@
         </div>
 
         <div class="row">
-            {{!-- <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burger Type</div>
-            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Hungry?</div>
-            <div id="column-header" class="col-sm-4 col-md-4 col-lg-4">Burgers Eaten</div> --}}
+            <h2 id="burger-header" class="col-sm-6 col-md-6 col-lg-6">
+                Burgers:
+                
+                    <div class="underline"></div>
+                
+            </h2>
+
+            <h2 id="burger-header" class="col-sm-6 col-md-6 col-lg-6">
+                Eaten:
+                <div class="underline"></div>
+            </h2>
+            
         </div>
 
         <div class="row">
-            <div class="burger-names" id="body-column" class="col-sm-4 col-md-4 col-lg-4">
+            <div class="burger-names" id="body-column" class="col-sm-6 col-md-6 col-lg-6">
 
                 <ol>
                     {{#each burgers}}
-                    {{> names}}
-                    {{/each}}
+				        {{#unless this.devoured}}
+				            {{> names devoured=false}}
+				        {{/unless}}
+				    {{/each}}
 
                 </ol>
 
             </div>
-            {{!-- <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">
+
+
+            <div id="body-column" class="col-sm-6 col-md-6 col-lg-6">
 
                 <ol>
                     {{#each burgers}}
-                    {{> burger}}
-                    {{/each}}
+				        {{#if devoured}}
+				            {{> names devoured=true}}
+				        {{/if}}
+				    {{/each}}
 
                 </ol>
 
-            </div> --}}
 
-            <div id="body-column" class="col-sm-4 col-md-4 col-lg-4">move burger here if it's been eaten</div>
+            </div>
         </div>
 
     </div>
+
+
 
 
     {{!-- Jquery link --}}
