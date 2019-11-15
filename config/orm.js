@@ -7,7 +7,7 @@ let orm = {
 
     all: function (tableInput, cb) {
 
-        let query = "SELECT * FROM burgers_db." + tableInput + ";";
+        let query = "SELECT * FROM " + tableInput + ";";
 
         console.log(query);
         connection.query(query, function (err, result) {
